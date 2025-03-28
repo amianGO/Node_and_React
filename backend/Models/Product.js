@@ -5,6 +5,9 @@ const productSchema = new mongoose.Schema({
     serial: {type: Number, require: true, unique: true},
     img: {type: String, require: true},
     state: {type: String, require: true, enum: ['IsStock','NoStock']}
-},{timestamp: true});
+},
+
+{timestamps: true}); //Agregamos la propiedad de timestamps para que se agreguen las fechas de creacion y actualizacion
+
 
 module.exports = mongoose.model('Product', productSchema);
